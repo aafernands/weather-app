@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	background-repeat: no-repeat;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 251, 0.723) 0%,
+		rgba(96, 0, 111, 0.692) 80%
+	);
+	background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.col-12 {
+	border-radius: 5px;
+	background-color: rgb(255, 255, 255);
+	border: none;
+	padding-left: 20px;
+	margin: 10px 0px 10px 0px;
+	font-family: "Roboto", sans-serif;
+}
+
+.forcast {
+	background-color: rgb(227, 227, 227);
+	flex: 1;
+	padding: 20px;
+	margin: 10px;
+	float: left;
+	border-radius: 5px;
+	background-color: rgb(219, 219, 219);
+}
+
+.col-10 {
+	margin: 0px;
+}
+
+li {
+	color: rgb(59, 59, 59);
+	font-size: 15px;
+	list-style-type: none;
+	text-align: center;
+	padding: 10px;
+	margin: 5px;
+	background-color: rgb(159, 166, 246);
+}
+
+#history {
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 5px;
+	font-family: "Roboto", sans-serif;
+}
+
+.city-name {
+	font-size: 30px;
+	font-family: "Roboto", sans-serif;
+	margin: 0px;
+}
+
+.col-2 {
+	background-color: #eee;
+	margin: 10px 0px 10px 0px;
+	border-radius: 5px;
+	padding: 20px;
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+}

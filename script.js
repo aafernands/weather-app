@@ -1,14 +1,16 @@
 function init() {
+	var currentDate = moment().format("MM/DD/YYYY");
+	var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
+		var lat = response.city.coord.lat;
+		var lon = response.city.coord.lon;	
+
 	var $temp = $("#temperature");
 	var $humd = $("#humidity");
 	var $wind = $("#wind-speed");
 	var $feels = $("#feels-like");
 	var $CityName = $("#city-name");
 	var $forcastList = $("#forcast-list");
-	var currentDate = moment().format("MM/DD/YYYY");
-	// var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
-	// var apiKey = "54fde0117f020fcb0b735dc6ca121412";
-	var apiKey = "37b522b3c25de2e7e8e30739dd835d39";
+	var $indexUV = $("#index-uv");
 
 	function handleSearchResult(response) {
 		console.log(response);
@@ -17,14 +19,15 @@ function init() {
 		var speed = response.wind.speed;
 		var feelsLike = response.main.feels_like;
 		var cityName = response.name;
+	
 
 		$temp.html("Temperature: " + temp + " &#8457;");
 		$humd.text("Humidity: " + humidity + "%");
 		$wind.text("Speed Limit: " + speed + " MPH");
 		$feels.html("Feels like: " + feelsLike + " &#8457;");
-		// $uv.html('UV Index: <span class="uv">' + ui + '</span>');
 		$CityName.html(
-			cityName +
+			"Today's Forecast for " +
+				cityName +
 				" (" +
 				currentDate +
 				") " +
@@ -33,9 +36,37 @@ function init() {
 				'@2x.png"/>'
 		);
 
-		// api to get the UV
-		// getUV(response.coord.lat, response.coord.lon)
+		$indexUV.html(
+			'UV Index: <span class="uv">' + lat + "&lon=" + lon + "</span>"
+		);
 	}
+
+
+
+
+
+
+
+	function getUV(lat, lon) {
+	
+		var lat = response.city.coord.lat;
+		var lon = response.city.coord.lon;	
+	
+		var indexUV = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+	
+		$.ajax({
+			url: indexUV,
+			method: "GET",
+		}).then(function (res) {
+			var uvI = res.value;
+			$(".uvIndex").text("UV Index: " + uvI);
+		});
+
+	}
+
+
+
+
 
 	function getCurrentWeather(cityName) {
 		var queryURL =
@@ -62,10 +93,6 @@ function init() {
 			url: url,
 			method: "GET",
 		}).then(handleForcastResult);
-	}
-
-	function getUV(lat, lon) {
-		// https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}
 	}
 
 	function handleForcastResult(response) {
@@ -116,6 +143,7 @@ function init() {
 
 			getCurrentWeather(cityName);
 			get5DayForcast(cityName);
+			getUV(cityName);
 		});
 	}
 

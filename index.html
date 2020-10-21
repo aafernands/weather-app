@@ -8,7 +8,7 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Title</title>
 </head>
 
@@ -18,7 +18,7 @@
 
 
     <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1 w-100 text-center">Wetaher Dashboard</span>
+        <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
     </nav>
 
 
@@ -26,14 +26,14 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-4 bg-light">
+            <div class="col-2 float-left">
                 <p class="search-header my-1">Search for a city</p>
                 <div class="input-group mb-3">
                     <input id="city-input" type="text" class="form-control" placeholder="Enter city name"
                         aria-label="Enter city name">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button" id="search-button">
-                            <i class="fas fa-search">search</i>
+                            <i class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
@@ -45,49 +45,64 @@
             </div>
 
 
-            <div class="col-8">
+            <div class="col-10">
 
-                <div class="row mr-0">
 
-                    <div class="col-12 border border-dark m-3 rounded">
-                        <div class="row">
-                            <div class="col-12">
-                                <span id="city-name" class="city-name align-middle"></span>
-                                <img id="current-pic" src="" alt="">
-                            </div>
+                <div class="col-12 ">
+
+                    <h2>Welcome to your Weather Dashboard!</h2>
+                    <h4>Search for a city to get your weather.</h4>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <span id="city-name" class="city-name "></span>
+                            <img id="current-pic" src="" alt="">
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="temperature"></p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="temperature"></p>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="humidity"></p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="humidity"></p>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="wind-speed"></p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="wind-speed"></p>
                         </div>
-                        <div class="row">
-                            <div class="col-12 d-flex">
-                                <p id="feels-like"></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex">
+                            <p id="feels-like"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex">
+                            <p id="index-uv"></p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col-12 ">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>5 Day Weather</h3>
+                            <div id="forcast-list">
                             </div>
                         </div>
                     </div>
+
                 </div>
 
 
-                <div class="row">
-                    <div class="col-12">
-                        <h3>5-Day Forecast</h3>
-                        <div id="forcast-list">
-                            
-                        </div>
-                    </div>
-                </div>
+
 
 
 
