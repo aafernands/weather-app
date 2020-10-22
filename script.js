@@ -127,16 +127,7 @@ function init() {
 		$forcastList.html(forcastBox);
 	}
 
-	// =============================
-	/**
-	 * check local storage to see if there's any city store in local storage variable "cityHistory"
-	 * - if there is:
-	 *   JSON.parse the data from local storage because local stroage only store string
-	 *   (String) "['Minnesota', 'Wisconsin']" => ['Minnesota', 'Wisconsin'] (Javascript Array)
-	 *
-	 *   loop through the array and append each city to the history list (ul) with <li> tag
-	 * - if nothing: do nothing
-	 */
+
 	function loadRecentHistory() {
 		// get data out of the local storage and set cityHistory
 		var storage = localStorage.getItem("cityHistory");
