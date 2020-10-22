@@ -46,6 +46,8 @@ li {
 	padding: 10px;
 	margin: 5px;
 	background-color: rgb(159, 166, 246);
+	cursor: pointer;
+	text-transform: capitalize;
 }
 
 #history {

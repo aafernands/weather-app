@@ -1,17 +1,24 @@
 function init() {
-	var currentDate = moment().format("MM/DD/YYYY");
-	var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
-		var lat = response.city.coord.lat;
-		var lon = response.city.coord.lon;	
+	var cityHistory = []; // store city search
 
+	// jquery dom element link to the html
 	var $temp = $("#temperature");
 	var $humd = $("#humidity");
 	var $wind = $("#wind-speed");
 	var $feels = $("#feels-like");
 	var $CityName = $("#city-name");
 	var $forcastList = $("#forcast-list");
-	var $indexUV = $("#index-uv");
+	var $historyList = $("#history");
+	var $welcome = $("#welcome");
+	var $message = $("#message");
+	var $result = $("#result");
+	var $historybox = $("#historybox");
+	var $uvIndex = $("#index-uv");
 
+	// open weather api key
+	var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
+
+	// =====================================================
 	function handleSearchResult(response) {
 		console.log(response);
 		var temp = response.main.temp;
@@ -19,54 +26,37 @@ function init() {
 		var speed = response.wind.speed;
 		var feelsLike = response.main.feels_like;
 		var cityName = response.name;
-	
 
 		$temp.html("Temperature: " + temp + " &#8457;");
 		$humd.text("Humidity: " + humidity + "%");
 		$wind.text("Speed Limit: " + speed + " MPH");
 		$feels.html("Feels like: " + feelsLike + " &#8457;");
+
+		var unixTime = response.dt * 1000;
+
 		$CityName.html(
 			"Today's Forecast for " +
 				cityName +
 				" (" +
-				currentDate +
+				new Date(unixTime).toLocaleDateString() +
 				") " +
 				'<img src="http://openweathermap.org/img/wn/' +
 				response.weather[0].icon +
 				'@2x.png"/>'
 		);
 
-		$indexUV.html(
-			'UV Index: <span class="uv">' + lat + "&lon=" + lon + "</span>"
-		);
-	}
-
-
-
-
-
-
-
-	function getUV(lat, lon) {
-	
-		var lat = response.city.coord.lat;
-		var lon = response.city.coord.lon;	
-	
-		var indexUV = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
-	
-		$.ajax({
-			url: indexUV,
-			method: "GET",
-		}).then(function (res) {
-			var uvI = res.value;
-			$(".uvIndex").text("UV Index: " + uvI);
+		// api to get the UV and update the UI
+		getUV(response.coord.lat, response.coord.lon, function (response) {
+			$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
 		});
-
 	}
 
-
-
-
+	function handleErrorResult(response) {
+		console.log(response);
+		$message.show();
+		$message.text("Error finding city");
+		$result.hide();
+	}
 
 	function getCurrentWeather(cityName) {
 		var queryURL =
@@ -79,7 +69,7 @@ function init() {
 		$.ajax({
 			url: queryURL,
 			method: "GET",
-		}).then(handleSearchResult);
+		}).then(handleSearchResult, handleErrorResult);
 	}
 
 	function get5DayForcast(cityName) {
@@ -95,6 +85,21 @@ function init() {
 		}).then(handleForcastResult);
 	}
 
+	function getUV(lat, lon, handleUVResult) {
+		var url =
+			"https://api.openweathermap.org/data/2.5/uvi?lat=" +
+			lat +
+			"&lon=" +
+			lon +
+			"&appid=" +
+			apiKey;
+
+		$.ajax({
+			url: url,
+			method: "GET",
+		}).then(handleUVResult);
+	}
+
 	function handleForcastResult(response) {
 		console.log("forcast result", response);
 
@@ -103,7 +108,7 @@ function init() {
 			if (forcast.dt_txt.indexOf("00:00:00") !== -1) {
 				forcastBox +=
 					"<div class='forcast'>" +
-					moment(forcast.dt_txt).format("MM/DD/YYYY") +
+					new Date(forcast.dt_txt).toLocaleDateString() +
 					" <br/><img src='http://openweathermap.org/img/wn/" +
 					forcast.weather[0].icon +
 					"@2x.png'/>" +
@@ -122,34 +127,79 @@ function init() {
 		$forcastList.html(forcastBox);
 	}
 
-	function attacheClearHistoryevent() {
-		// clear data in local storage/
-		// clear the history list
-	}
-
+	// =============================
+	/**
+	 * check local storage to see if there's any city store in local storage variable "cityHistory"
+	 * - if there is:
+	 *   JSON.parse the data from local storage because local stroage only store string
+	 *   (String) "['Minnesota', 'Wisconsin']" => ['Minnesota', 'Wisconsin'] (Javascript Array)
+	 *
+	 *   loop through the array and append each city to the history list (ul) with <li> tag
+	 * - if nothing: do nothing
+	 */
 	function loadRecentHistory() {
-		// get data out of the local storage
-		// append to the history list
+		// get data out of the local storage and set cityHistory
+		var storage = localStorage.getItem("cityHistory");
+
+		if (storage) {
+			cityHistory = JSON.parse(storage);
+
+			var cityHtml = "";
+			cityHistory.forEach(function (city) {
+				cityHtml += "<li>" + city + "</li>";
+			});
+			$historyList.html(cityHtml);
+
+			$historybox.show();
+		}
 	}
 
-	function attachSearchEvent() {
-		var $historyList = $("#history");
+	function getCityWeater(cityName) {
+		$message.hide();
+		$welcome.empty();
+		$result.show();
+		getCurrentWeather(cityName);
+		get5DayForcast(cityName);
+	}
+
+	function attachEvent() {
+		$("#clear-history").on("click", function (event) {
+			// clear local storage
+			localStorage.clear("cityHistory");
+			// update the UI city list
+			$historyList.empty();
+			cityHistory = [];
+			$historybox.hide();
+		});
+
+		$historyList.on("click", "li", function (event) {
+			getCityWeater($(this).text());
+		});
 
 		$("#search-button").on("click", function (event) {
-			var cityName = $("#city-input").val();
-			$historyList.append("<li>" + cityName + "</li>");
+			// remove welcome message
+			var cityName = $("#city-input").val().toLowerCase();
 
-			// update local storage history
+			// check if city is in history
+			if (cityHistory.indexOf(cityName) === -1) {
+				$historyList.append("<li>" + cityName + "</li>");
+				cityHistory.push(cityName);
+			}
+			// save city to local storage
+			localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
 
-			getCurrentWeather(cityName);
-			get5DayForcast(cityName);
-			getUV(cityName);
+			if (cityHistory.length > 0) {
+				// has history
+				$historybox.show();
+			}
+			getCityWeater(cityName);
 		});
 	}
 
 	// load recent history
+	loadRecentHistory();
 
-	attachSearchEvent();
+	attachEvent();
 	// attacheClearHistoryevent();
 }
 
