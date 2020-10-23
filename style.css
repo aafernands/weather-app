@@ -92,6 +92,8 @@ li {
 
 #welcome {
 	padding: 120px 20px 200px 60px;
+	align-items: center;
+	text-align: center;
 }
 
 @media only screen and (max-width: 500px) {
@@ -124,4 +126,25 @@ footer {
 
 .fiveDayForecast {
 	box-shadow: 2.5px 5px 4px #000000;
+}
+
+.jumbotron {
+	text-align: center;
+	align-items: center;
+	padding: 10px;
+	background-color: #ffff;
+	border-radius: 0px;
+	font-family: "Roboto", sans-serif;
+}
+
+.btn {
+	background-color: #0f28c9;
+	color: #fffefe;
+	text-decoration: none;
+	cursor: pointer;
+	align-items: center;
+	font-size: 12px;
+	position: relative;
+	flex-wrap: wrap;
+	border: none;
 }
