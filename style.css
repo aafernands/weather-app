@@ -19,8 +19,8 @@ body {
 	border-radius: 5px;
 	background-color: rgb(255, 255, 255);
 	border: none;
-	padding-left: 20px;
-	margin: 10px 0px 10px 0px;
+	padding: 50px 20x 10px 20px;
+	margin: 20px 0px 10px 0px;
 	font-family: "Roboto", sans-serif;
 }
 
@@ -51,14 +51,14 @@ li {
 }
 
 #history {
-	background-color: #eee;
+	background-color: rgb(255, 255, 255);
 	padding: 10px;
 	border-radius: 5px;
 	font-family: "Roboto", sans-serif;
 }
 
-.city-name {
-	font-size: 30px;
+.resultsLine {
+	font-size: 20px;
 	font-family: "Roboto", sans-serif;
 	margin: 0px;
 }
@@ -70,4 +70,58 @@ li {
 	padding: 20px;
 	font-family: "Roboto", sans-serif;
 	font-size: 20px;
+}
+
+#welcome {
+	margin: 20px;
+}
+
+.col-md-3 {
+	margin: 20px 0px 60px 0px;
+	padding: 20px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	box-shadow: 2.5px 5px 4px #000000;
+}
+
+@media only screen and (max-width: 500px) {
+	.col-md-3 {
+		margin: 20px 20px 0px 20px;
+	}
+}
+
+#welcome {
+	padding: 120px 20px 200px 60px;
+}
+
+@media only screen and (max-width: 500px) {
+	.welcome {
+		align-items: center;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+.search-header {
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+	padding: 20px;
+	text-align: center;
+}
+
+footer {
+	width: 100%;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	font-size: 10px;
+}
+
+
+
+.todayForecast {
+	box-shadow: 2.5px 5px 4px #000000;
+}
+
+.fiveDayForecast {
+	box-shadow: 2.5px 5px 4px #000000;
 }

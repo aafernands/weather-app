@@ -127,7 +127,6 @@ function init() {
 		$forcastList.html(forcastBox);
 	}
 
-
 	function loadRecentHistory() {
 		// get data out of the local storage and set cityHistory
 		var storage = localStorage.getItem("cityHistory");
@@ -149,6 +148,8 @@ function init() {
 		$message.hide();
 		$welcome.empty();
 		$result.show();
+		$welcome.hide();
+
 		getCurrentWeather(cityName);
 		get5DayForcast(cityName);
 	}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -14,14 +15,9 @@
 
 <body>
 
-
-
-
     <nav class="navbar navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
     </nav>
-
-
 
     <div class="container">
         <div class="row">
@@ -38,75 +34,91 @@
                     </div>
                 </div>
                 <div id="historybox" style="display:none">
-                    <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
-                    <ul id="history">
 
+                    <p class="search-header my-1">Favorites</p>
+                    <ul id="history">
                     </ul>
+                    <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="col-12">
-                    <div id="message">
-                    </div>
-                    <div id="welcome">
-                        <h2>Welcome to your Weather Dashboard!</h2>
-                        <h4>Search for a city to get weather information.</h4>
-                    </div>
-                </div>
-                <div id="result" style="display:none">
-                    <div class="col-12 ">
-                        <div class="row">
-                            <div class="col-12">
-                                <span id="city-name" class="city-name "></span>
-                                <img id="current-pic" src="" alt="">
-                            </div>
+                <div class="todayForecast">
+                    <div class="col-12">
+                        <div id="message">
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="temperature"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="humidity"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="wind-speed"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 d-flex">
-                                <p id="feels-like"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 d-flex">
-                                <p id="index-uv"></p>
-                            </div>
+                        <div id="welcome">
+                            <h2>Welcome to your Weather Dashboard!</h2>
+                            <h4>Search for a city to get weather information.</h4>
                         </div>
                     </div>
 
-                    <div class="col-12 " id="fiveDayWeather">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3>5 Day Weather</h3>
-                                <div id="forcast-list">
+                </div>
+                <div class="resultsContainer">
+                    <div id="result" style="display:none">
+                        <div class="fiveDayForecast">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span id="city-name" class="resultsLine "></span>
+                                        <img id="current-pic" src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="resultsLine">
+                                    <div class="col-12">
+                                        <p id="temperature"></p>
+                                    </div>
+                                </div>
+                                <div class="resultsLine">
+                                    <div class="col-12">
+                                        <p id="humidity"></p>
+                                    </div>
+                                </div>
+                                <div class="resultsLine">
+                                    <div class="col-12">
+                                        <p id="wind-speed"></p>
+                                    </div>
+                                </div>
+                                <div class="resultsLine">
+                                    <div class="col-12 d-flex">
+                                        <p id="feels-like"></p>
+                                    </div>
+                                </div>
+                                <div class="resultsLine">
+                                    <div class="col-12 d-flex">
+                                        <p id="index-uv"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fiveDayForecast"></div>
+                        <div class="col-12 " id="fiveDayWeather">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>5 Day Weather</h3>
+                                    <div id="forcast-list">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                </div>
+
             </div>
+
+            <div class="row">
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+            </div>
+            <footer>
+                <p>© 2020 Application Designed by <a href="https://twitter.com/alexafernands">AlexFernandes</a></p>
+            </footer>
         </div>
+
+    </div>
+
     </div>
 
 
