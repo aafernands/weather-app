@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
 
 body {
 	font-family: "Open Sans", sans-serif;
@@ -15,13 +16,48 @@ body {
 	background-attachment: fixed;
 }
 
-.col-12 {
+
+
+
+
+#todayForecastContainer {
 	border-radius: 5px;
-	background-color: rgb(255, 255, 255);
+	background-color: #f9f000;
 	border: none;
-	padding: 50px 20x 10px 20px;
-	margin: 20px 0px 10px 0px;
+	padding: 20px;
+	margin: 20px 0px 20px 0px;
 	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+}
+
+#fiveDayContainer {
+	border-radius: 5px;
+	background-color: #02ff28;
+	border: none;
+	padding: 20px;
+	margin: 20px 0px 20px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+}
+
+.errorContainer {
+	border-radius: 5px;
+	background-color: #1900ff;
+	border: none;
+	padding: 20px;
+	margin: 20px 0px 20px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+}
+
+.welcomeContainer {
+	border-radius: 5px;
+	background-color: #e008eb;
+	border: none;
+	padding: 20px;
+	margin: 20px 0px 20px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
 }
 
 .forcast {
@@ -31,8 +67,12 @@ body {
 	margin: 10px;
 	float: left;
 	border-radius: 5px;
-	background-color: rgb(219, 219, 219);
+	background-color: #ffffff69;
 }
+
+
+
+
 
 .col-10 {
 	margin: 0px;
@@ -58,7 +98,7 @@ li {
 }
 
 .resultsLine {
-	font-size: 20px;
+	font-size: 30px;
 	font-family: "Roboto", sans-serif;
 	margin: 0px;
 }
@@ -72,12 +112,8 @@ li {
 	font-size: 20px;
 }
 
-#welcome {
-	margin: 20px;
-}
-
 .col-md-3 {
-	margin: 20px 0px 60px 0px;
+	margin: 20px 0px 20px 0px;
 	padding: 20px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 5px;
@@ -91,7 +127,7 @@ li {
 }
 
 #welcome {
-	padding: 120px 20px 200px 60px;
+	padding: 120px 0px 160px 0px;
 	align-items: center;
 	text-align: center;
 }
@@ -129,13 +165,14 @@ footer {
 .jumbotron {
 	text-align: center;
 	align-items: center;
-	padding: 10px;
+	margin: 0px;
+	padding: 15px;
 	background-color: #ffff;
 	border-radius: 0px;
-	font-family: "Roboto", sans-serif;
+	font-family: "Rajdhani", sans-serif;
 }
 
-.btn {
+.clearHistoryButton {
 	background-color: #0f28c9;
 	color: #fffefe;
 	text-decoration: none;
@@ -147,10 +184,18 @@ footer {
 	border: none;
 }
 
-
 .title {
 	font-size: 40px;
 	color: rgb(84, 84, 84);
 	background-color: rgba(238, 238, 238, 0.488);
+}
 
+.wrapper {
+	margin-right: auto; /* 1. Centers the content. */
+	margin-left: auto; /* 1. Centers the content. */
+
+	max-width: 960px; /* 2. See the "width vs max-width" section */
+
+	padding-right: 10px; /* 3. See the "Additional Padding" section */
+	padding-left: 10px; /* 3. See the "Additional Padding" section */
 }

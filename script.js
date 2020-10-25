@@ -9,9 +9,9 @@ function init() {
 	var $CityName = $("#city-name");
 	var $forcastList = $("#forcast-list");
 	var $historyList = $("#history");
-	var $welcome = $("#welcome");
-	var $message = $("#message");
-	var $result = $("#result");
+	var $welcome = $(".welcomeContainer");
+	var $errorMessage = $("#errorMessage");
+	var $todayForecastContainer = $("#todayForecastContainer");
 	var $historybox = $("#historybox");
 	var $uvIndex = $("#index-uv");
 
@@ -53,9 +53,9 @@ function init() {
 
 	function handleErrorResult(response) {
 		console.log("here", response);
-		$message.show();
-		$message.text("Error finding city");
-		$result.hide();
+		$errorMessage.show();
+		$errorMessage.text("Error finding city");
+		$todayForecastContainer.hide();
 		$historybox.hide();
 	}
 
@@ -146,11 +146,12 @@ function init() {
 	}
 
 	function getCityWeater(cityName) {
-		$message.hide();
+		$errorMessage.hide();
 		$welcome.empty();
-		$result.show();
+		$todayForecastContainer.show();
+		
 		$welcome.hide();
-
+$forcastList.show();
 		getCurrentWeather(cityName);
 		get5DayForcast(cityName);
 	}
@@ -195,5 +196,4 @@ function init() {
 	attachEvent();
 	// attacheClearHistoryevent();
 }
-
 $(init);

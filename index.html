@@ -10,18 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
 
+
     <div class="jumbotron">
         <div class="container">
-            <a style= "text-decoration: none" href="index.html" class="title">Weather Dashboard</a>
+            <a style="text-decoration: none" href="index.html" class="title">Weather Dashboard</a>
         </div>
     </div>
+    <div class="wrapper">
 
-    <div class="container">
         <div class="row">
 
             <div class="col-md-3">
@@ -42,86 +43,71 @@
                     </ul>
                     <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 </div>
+
             </div>
+
+
             <div class="col-md-9">
-                <div class="todayForecast">
-                    <div class="col-12">
-                        <div id="message">
-                        </div>
-                        <div id="welcome">
-                            <h2>Welcome to your Weather Dashboard!</h2>
-                            <h4>Search for a city to get weather information.</h4>
-                        </div>
+
+
+
+                <div class="errorContainer" id="errorMessage" style="display:none">
+                </div>
+                <div class="welcomeContainer">
+                    <br>
+                    <h2>Welcome to your Weather Dashboard!</h2>
+                    <hr>
+                    <h4>Search for a city to get weather information.</h4>
+                </div>
+
+
+
+
+                <div id="todayForecastContainer" class="col-12 " style="display:none">
+                    <span id="city-name" class="resultsLine "></span>
+
+                    <div class="temperature">
+                        <p id="temperature"></p>
                     </div>
 
+                    <div class="humidity">
+                        <p id="humidity"></p>
+                    </div>
+                    <div class="wind-speed">
+                        <p id="wind-speed"></p>
+                    </div>
+
+                    <div class="feels-like">
+                        <p id="feels-like"></p>
+                    </div>
+
+                    <div class="index-uv">
+                        <p id="index-uv"></p>
+                    </div>
                 </div>
-                <div class="resultsContainer">
-                    <div id="result" style="display:none">
-                        <div class="fiveDayForecast">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <span id="city-name" class="resultsLine "></span>
-                                        <img id="current-pic" src="" alt="">
-                                    </div>
-                                </div>
-                                <div class="resultsLine">
-                                    <div class="col-12">
-                                        <p id="temperature"></p>
-                                    </div>
-                                </div>
-                                <div class="resultsLine">
-                                    <div class="col-12">
-                                        <p id="humidity"></p>
-                                    </div>
-                                </div>
-                                <div class="resultsLine">
-                                    <div class="col-12">
-                                        <p id="wind-speed"></p>
-                                    </div>
-                                </div>
-                                <div class="resultsLine">
-                                    <div class="col-12 d-flex">
-                                        <p id="feels-like"></p>
-                                    </div>
-                                </div>
-                                <div class="resultsLine">
-                                    <div class="col-12 d-flex">
-                                        <p id="index-uv"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="fiveDayForecast"></div>
-                        <div class="col-12 " id="fiveDayWeather">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h3>5 Day Weather</h3>
-                                    <div id="forcast-list">
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+
+                <div id="fiveDayContainer" class="col-12" >
+                    <div class="row">
+                        <h3>5 Day Weather</h3>
+                        <div id="forcast-list">
                         </div>
                     </div>
                 </div>
 
+
             </div>
 
-            <div class="row">
-                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-            </div>
-            <footer>
-                <p>© 2020 Application Designed by <a href="https://twitter.com/alexafernands">AlexFernandes</a></p>
-            </footer>
+
+
         </div>
 
     </div>
 
-    </div>
+
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
