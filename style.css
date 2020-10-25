@@ -16,23 +16,9 @@ body {
 	background-attachment: fixed;
 }
 
-
-
-
-
 #todayForecastContainer {
 	border-radius: 5px;
-	background-color: #f9f000;
-	border: none;
-	padding: 20px;
-	margin: 20px 0px 20px 0px;
-	font-family: "Roboto", sans-serif;
-	box-shadow: 2.5px 5px 4px #000000;
-}
-
-#fiveDayContainer {
-	border-radius: 5px;
-	background-color: #02ff28;
+	background-color: #ffffff76;
 	border: none;
 	padding: 20px;
 	margin: 20px 0px 20px 0px;
@@ -42,25 +28,28 @@ body {
 
 .errorContainer {
 	border-radius: 5px;
-	background-color: #1900ff;
+	background-color: #ffffff76;
 	border: none;
-	padding: 20px;
-	margin: 20px 0px 20px 0px;
+	padding: 100px;
+	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
+	color: rgb(255, 255, 255);
 }
 
 .welcomeContainer {
 	border-radius: 5px;
-	background-color: #e008eb;
+	background-color: #ffffff76;
 	border: none;
-	padding: 20px;
-	margin: 20px 0px 20px 0px;
+	padding: 100px;
+	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
+	color: #343434;
 }
 
 .forcast {
+	align-items: center;
 	background-color: rgb(227, 227, 227);
 	flex: 1;
 	padding: 20px;
@@ -70,9 +59,10 @@ body {
 	background-color: #ffffff69;
 }
 
-
-
-
+#forcast-list {
+	align-items: center;
+	text-align: center;
+}
 
 .col-10 {
 	margin: 0px;
@@ -80,21 +70,22 @@ body {
 
 li {
 	color: rgb(59, 59, 59);
+	background-color: ivory;
 	font-size: 15px;
 	list-style-type: none;
 	text-align: center;
-	padding: 10px;
-	margin: 5px;
-	background-color: rgb(159, 166, 246);
+	align-items: center;
+	padding: 5px;
+	margin: 10px;
 	cursor: pointer;
 	text-transform: capitalize;
+	font-family: "Roboto", sans-serif;
 }
 
-#history {
-	background-color: rgb(255, 255, 255);
-	padding: 10px;
-	border-radius: 5px;
+#historyBox {
+	align-items: center;
 	font-family: "Roboto", sans-serif;
+	text-align: center;
 }
 
 .resultsLine {
@@ -112,39 +103,33 @@ li {
 	font-size: 20px;
 }
 
-.col-md-3 {
-	margin: 20px 0px 20px 0px;
+#searchBar {
+	margin: 20px 0px 0px 0px;
 	padding: 20px;
-	background-color: rgb(255, 255, 255);
+	background-color: #ffffff76;
 	border-radius: 5px;
 	box-shadow: 2.5px 5px 4px #000000;
+	align-items: center;
+	text-align: center;
 }
 
 @media only screen and (max-width: 500px) {
-	.col-md-3 {
-		margin: 20px 20px 0px 20px;
+	#searchBar {
+		margin: 20px 15px 0px 15px;
 	}
 }
 
-#welcome {
+.welcomeContainer {
 	padding: 120px 0px 160px 0px;
 	align-items: center;
 	text-align: center;
 }
 
 @media only screen and (max-width: 500px) {
-	.welcome {
+	.welcomeContainer {
 		align-items: center;
-		margin: 0px;
-		padding: 0px;
+		padding: 40px;
 	}
-}
-
-.search-header {
-	font-size: 20px;
-	font-family: "Roboto", sans-serif;
-	padding: 20px;
-	text-align: center;
 }
 
 footer {
@@ -199,3 +184,95 @@ footer {
 	padding-right: 10px; /* 3. See the "Additional Padding" section */
 	padding-left: 10px; /* 3. See the "Additional Padding" section */
 }
+
+.uv {
+	background-color: rgb(255, 0, 0);
+	padding: 5px;
+	color: rgba(255, 255, 255, 0.933);
+}
+
+.fahrenheit,
+p {
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.temp,
+#tempDisplay {
+	margin-top: 10px;
+	color: rgb(53, 53, 53);
+	font-size: 40px;
+	font-weight: 100;
+
+	text-align: right;
+}
+
+.DisplayWeathercontainer {
+	align-items: center;
+}
+
+.col-sm {
+	padding: 10px;
+	font-weight: 100;
+}
+
+#temperature {
+	font-size: 100px;
+	font-weight: 100;
+}
+
+.btn {
+	background-color: #0353b5;
+	border: none;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 12px;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+ul {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding: 0px;
+}
+
+.messageCity {
+	font-size: 20px;
+}
+
+.imgHeader {
+	position: absolute;
+	z-index: 4;
+	top: 60px;
+	left: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+	.imgHeader {
+		position: absolute;
+		z-index: 4;
+		top: 60px;
+		left: 30px;
+	}
+}
+

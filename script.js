@@ -14,7 +14,8 @@ function init() {
 	var $todayForecastContainer = $("#todayForecastContainer");
 	var $historybox = $("#historybox");
 	var $uvIndex = $("#index-uv");
-
+	var $digitalClock = $("#DigitalCLOCK");
+	var $greeting = $("#greeting");
 	// open weather api key
 	var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
 
@@ -27,20 +28,22 @@ function init() {
 		var feelsLike = response.main.feels_like;
 		var cityName = response.name;
 
-		$temp.html("Temperature: " + temp + " &#8457;");
+		$temp.html(Math.round(temp) + "<span class='temp'>&#8457; </span>");
 		$humd.text("Humidity: " + humidity + "%");
-		$wind.text("Speed Limit: " + speed + " MPH");
-		$feels.html("Feels like: " + feelsLike + " &#8457;");
+		$wind.text("Speed Limit: " + speed + " mph");
+		$feels.html("Feels like: " + Math.round(feelsLike) + " &#8457;");
+
+		$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
 
 		var unixTime = response.dt * 1000;
 
 		$CityName.html(
-			"Today's Forecast for " +
+
+			"<span class='messageCity'>Today's Forecast for </span>"
+
+			+
 				cityName +
-				" (" +
-				new Date(unixTime).toLocaleDateString() +
-				") " +
-				'<img src="http://openweathermap.org/img/wn/' +
+				'<img class= "imgHeader" src="http://openweathermap.org/img/wn/' +
 				response.weather[0].icon +
 				'@2x.png"/>'
 		);
@@ -54,7 +57,7 @@ function init() {
 	function handleErrorResult(response) {
 		console.log("here", response);
 		$errorMessage.show();
-		$errorMessage.text("Error finding city");
+		$errorMessage.text("Couldn't finding city please try again");
 		$todayForecastContainer.hide();
 		$historybox.hide();
 	}
@@ -116,7 +119,7 @@ function init() {
 					"<br>" +
 					"Temp: " +
 					forcast.main.temp +
-					" &#8457;" +
+					"&#8457;" +
 					"<br>" +
 					"Humidity: " +
 					forcast.main.humidity +
@@ -149,9 +152,9 @@ function init() {
 		$errorMessage.hide();
 		$welcome.empty();
 		$todayForecastContainer.show();
-		
+
 		$welcome.hide();
-$forcastList.show();
+		$forcastList.show();
 		getCurrentWeather(cityName);
 		get5DayForcast(cityName);
 	}
@@ -190,9 +193,33 @@ $forcastList.show();
 		});
 	}
 
+	function getGreeting(hourNow, session) {
+		if (session === "AM") {
+			return "Good morning";
+		} else {
+			if ((hourNow) => 12 || hourNow < 7) {
+				return "Good afternoon";
+			}
+			return "Good Evening";
+		}
+	}
+
+	function updateTime() {
+		var currentTime = moment();
+		var greeting = getGreeting(
+			currentTime.format("hh"),
+			currentTime.format("A")
+		);
+
+		// update the html view
+		$digitalClock.text(currentTime.format("hh:mm:ss A"));
+		$greeting.text(greeting);
+	}
+
+	setInterval(updateTime, 1000);
+
 	// load recent history
 	loadRecentHistory();
-
 	attachEvent();
 	// attacheClearHistoryevent();
 }

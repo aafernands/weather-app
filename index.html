@@ -25,26 +25,62 @@
 
         <div class="row">
 
-            <div class="col-md-3">
+            <div id="searchBar" class="col-md-3">
+
+
+
+
+
+                <div class="dashboardHeader">
+
+                    <div id="greeting">greeting</div>
+
+
+                    <p id="DigitalCLOCK" class="clock">clock</p>
+
+
+                    <hr>
+                </div>
+
+
+
+
+
                 <p class="search-header my-1">Search for a city</p>
+
+
                 <div class="input-group mb-3">
-                    <input id="city-input" type="text" class="form-control" placeholder="Enter city name"
+
+
+                    <input id="city-input" type="text" class="form-control" placeholder="Search for Location / City"
                         aria-label="Enter city name">
+
                     <div class="input-group-append">
+
                         <button class="btn btn-primary" type="button" id="search-button">
                             <i class="fas fa-search"></i>
                         </button>
+
                     </div>
+
+
                 </div>
+                <ul id="history">
+                </ul>
+
                 <div id="historybox" style="display:none">
 
-                    <p class="search-header my-1">Favorites</p>
-                    <ul id="history">
-                    </ul>
+
+                    <br>
                     <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 </div>
 
             </div>
+
+            <!-- <p class="search-header my-1">Favorites</p> -->
+
+
+
 
 
             <div class="col-md-9">
@@ -66,36 +102,55 @@
                 <div id="todayForecastContainer" class="col-12 " style="display:none">
                     <span id="city-name" class="resultsLine "></span>
 
-                    <div class="temperature">
-                        <p id="temperature"></p>
+
+
+
+
+
+                    <div class="DisplayWeathercontainer">
+                        <div class="row">
+                            <div id="tempDisplay" class="col-sm">
+                                <div class="temperature">
+                                    <p id="temperature"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="humidity">
+                                    <p id="humidity"></p>
+                                </div>
+                                <div class="wind-speed">
+                                    <p id="wind-speed"></p>
+                                </div>
+
+                                <div class="feels-like">
+                                    <p id="feels-like"></p>
+                                </div>
+
+                                <div class="index-uv">
+                                    <p id="index-uv"></p>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
 
-                    <div class="humidity">
-                        <p id="humidity"></p>
-                    </div>
-                    <div class="wind-speed">
-                        <p id="wind-speed"></p>
-                    </div>
 
-                    <div class="feels-like">
-                        <p id="feels-like"></p>
-                    </div>
+                    <hr>
 
-                    <div class="index-uv">
-                        <p id="index-uv"></p>
-                    </div>
-                </div>
-
-
-
-
-                <div id="fiveDayContainer" class="col-12" >
-                    <div class="row">
+                    <div class="col-12">
                         <h3>5 Day Weather</h3>
-                        <div id="forcast-list">
+
+                        <div class="row">
+                            <div id="forcast-list"></div>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
 
 
             </div>
@@ -113,6 +168,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script src="script.js"></script>
 
