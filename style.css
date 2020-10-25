@@ -118,8 +118,6 @@ footer {
 	font-size: 10px;
 }
 
-
-
 .todayForecast {
 	box-shadow: 2.5px 5px 4px #000000;
 }
@@ -147,4 +145,12 @@ footer {
 	position: relative;
 	flex-wrap: wrap;
 	border: none;
+}
+
+
+.title {
+	font-size: 40px;
+	color: rgb(84, 84, 84);
+	background-color: rgba(238, 238, 238, 0.488);
+
 }

@@ -52,10 +52,11 @@ function init() {
 	}
 
 	function handleErrorResult(response) {
-		console.log(response);
+		console.log("here", response);
 		$message.show();
 		$message.text("Error finding city");
 		$result.hide();
+		$historybox.hide();
 	}
 
 	function getCurrentWeather(cityName) {
@@ -101,7 +102,7 @@ function init() {
 	}
 
 	function handleForcastResult(response) {
-		console.log("forcast result", response);
+		console.log("forecast result", response);
 
 		var forcastBox = "";
 		response.list.forEach(function (forcast) {
