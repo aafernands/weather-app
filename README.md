@@ -1,4 +1,4 @@
-### weather-dashboard# HOMEWORK WEEK 6 - WEATHER DASHBOARD API
+### HOMEWORK WEEK 6 - WEATHER DASHBOARD API
 
 ## Assignment
 
