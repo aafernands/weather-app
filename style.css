@@ -60,6 +60,14 @@ body {
 	background-color: #ffffff69;
 }
 
+@media only screen and (max-width: 500px) {
+	.forcast {
+		padding: 50px;
+	margin-left: 60px;
+	}
+}
+
+
 #row {
 	align-items: center;
 	text-align: center !important;
@@ -182,8 +190,8 @@ p {
 	color: #ffffff93;
 	font-size: 40px;
 	font-weight: 100;
-	text-align: right;
-	align-items: center;
+	text-align: left;
+	align-items: left;
 }
 
 .DisplayWeathercontainer {
@@ -239,30 +247,23 @@ ul {
 	font-size: 20px;
 }
 
+
 .imgHeader {
 	position: absolute;
 	z-index: 4;
-	top: 60px;
-	left: 30px;
+	top: 40px;
+	left: 190px;
+	width: 150px;
+
 }
 
 @media only screen and (max-width: 500px) {
 	.imgHeader {
 		position: absolute;
 		z-index: 4;
-		top: 40px;
-		left: 45px;
+		top: 50px;
+		left: 180px;
 		width: 150px;
-	}
-}
-
-@media only screen and (max-width: 1850px) {
-	.imgHeader {
-		width: 120px;
-		position: absolute;
-		z-index: 4;
-		top: 70px;
-		left: 60px;
 	}
 }
 
