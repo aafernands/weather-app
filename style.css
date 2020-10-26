@@ -22,7 +22,7 @@ body {
 	background-color: #00000051;
 	border: none;
 	padding: 20px;
-	margin: 20px 0px 20px 0px;
+	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
 	color: #ffffffbd;
@@ -43,7 +43,6 @@ body {
 	border-radius: 5px;
 	background-color: #00000051;
 	border: none;
-	padding: 200px;
 	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
@@ -62,8 +61,8 @@ body {
 }
 
 #row {
-	align-items: center ;
-	text-align: center!important;
+	align-items: center;
+	text-align: center !important;
 }
 
 .col-10 {
@@ -105,7 +104,6 @@ li {
 	align-items: center;
 	text-align: center;
 	color: #ffffffbd;
-
 }
 
 @media only screen and (max-width: 500px) {
@@ -115,7 +113,7 @@ li {
 }
 
 .welcomeContainer {
-	padding: 120px 0px 160px 0px;
+	padding: 300px 0px 300px 0px;
 	align-items: center;
 	text-align: center;
 }
@@ -123,7 +121,8 @@ li {
 @media only screen and (max-width: 500px) {
 	.welcomeContainer {
 		align-items: center;
-		padding: 40px;
+		padding: 100px 0px 150px 0px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -200,7 +199,6 @@ p {
 	font-size: 100px;
 	font-weight: 100;
 	font-family: "Roboto", sans-serif;
-
 }
 
 .btn {
@@ -255,7 +253,6 @@ ul {
 		top: 40px;
 		left: 45px;
 		width: 150px;
-
 	}
 }
 
@@ -299,8 +296,9 @@ a {
 
 .navbar-brand {
 	font-size: 60px;
-	color:#ffffffbd;
-
+	color: #ffffffbd;
+	align-items: center;
+	text-align: center;
 	font-family: "Rajdhani", sans-serif;
 }
 @media only screen and (max-width: 1850px) {
@@ -311,15 +309,20 @@ a {
 	}
 }
 .navbar-brand:hover {
-	color: #07008a;
+	color: #0353b5;
 	text-decoration: underline;
 }
 
 .row.display-flex {
 	display: flex;
 	flex-wrap: wrap;
-  }
-  .row.display-flex > [class*='col-'] {
+}
+.row.display-flex > [class*="col-"] {
 	display: flex;
 	flex-direction: column;
-  }
+}
+
+hr {
+	margin: 10px 50px 10px 50px;
+	background-color: rgba(255, 255, 255, 0.249);
+}

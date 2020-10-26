@@ -162,6 +162,7 @@ function init() {
 			$historyList.empty();
 			cityHistory = [];
 			$historybox.hide();
+			$errorMessage.show();
 		});
 
 		$historyList.on("click", "li", function (event) {
