@@ -169,12 +169,30 @@ li {
 	padding-left: 10px;
 }
 
-.uv {
-	background-color: rgb(255, 0, 0);
+#uv {
 	padding: 5px;
-	color: rgba(255, 255, 255, 0.933);
+	color: rgba(65, 65, 65, 0.933);
 }
 
+.uvLow{
+	background-color: green;
+}
+
+.uvModerate{
+	background-color: yellow;
+}
+
+.uvHigh{
+	background-color: orange;
+}
+
+.uvVeryHigh{
+	background-color: red;
+}
+
+.uvExtremelyHigh{
+	background-color: purple;
+}
 .fahrenheit,
 p {
 	font-family: "Roboto", sans-serif;

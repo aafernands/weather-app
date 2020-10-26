@@ -28,12 +28,12 @@ function init() {
 		var feelsLike = response.main.feels_like;
 		var cityName = response.name;
 		var unixTime = response.dt * 1000;
-
+		console.log("unix time", unixTime);
 		$temp.html(Math.round(temp) + "<span class='temp'>&#8457; </span>");
 		$humd.text("Humidity: " + humidity + "%");
 		$wind.text("Speed Limit: " + speed + " mph");
 		$feels.html("Feels like: " + Math.round(feelsLike) + " &#8457;");
-		$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
+		//$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
 
 		$CityName.html(
 			"<span class='messageCity'>Today's Forecast for </span>" +
@@ -45,7 +45,25 @@ function init() {
 
 		// api to get the UV and update the UI
 		getUV(response.coord.lat, response.coord.lon, function (response) {
-			$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
+			$uvIndex.html('UV Index: <span id="uv">' + response.value + "</span>");
+
+			console.log(response.value);
+			if (response.value < 3) {
+				//low
+				$("#uv").addClass("uvLow");
+			} else if (response.value > 2 || response.value < 6) {
+				//moderate
+				$("#uv").addClass("uvModerate");
+			} else if (response.value === 6 || response.value === 7) {
+				//high
+				$("#uv").addClass("uvHigh");
+			} else if (response.value > 7 || response.value < 11) {
+				//very high
+				$("#uv").addClass("uvVeryHigh");
+			} else {
+				//extreme
+				$("#uv").addClass("uvExtremelyHigh");
+			}
 		});
 	}
 
@@ -132,6 +150,7 @@ function init() {
 
 		if (storage) {
 			cityHistory = JSON.parse(storage);
+			getCityWeater(cityHistory[cityHistory.length - 1]);
 
 			var cityHtml = "";
 			cityHistory.forEach(function (city) {
@@ -173,6 +192,15 @@ function init() {
 			// remove welcome message
 			var cityName = $("#city-input").val().toLowerCase();
 
+			console.log("what is cityName", cityName);
+
+			if (cityName === "") {
+				$errorMessage.show();
+				$errorMessage.text("Couldn't finding city please try again");
+				$welcome.hide();
+				return;
+			}
+
 			// check if city is in history
 			if (cityHistory.indexOf(cityName) === -1) {
 				$historyList.append("<li>" + cityName + "</li>");
@@ -185,6 +213,7 @@ function init() {
 				// has history
 				$historybox.show();
 			}
+
 			getCityWeater(cityName);
 		});
 	}
