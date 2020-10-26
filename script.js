@@ -212,11 +212,13 @@ function init() {
 		$greeting.text(greeting);
 	}
 
+	// load greeting and moment clock
 	setInterval(updateTime, 1000);
 
 	// load recent history
 	loadRecentHistory();
-	attachEvent();
+
 	// attacheClearHistoryevent();
+	attachEvent();
 }
 $(init);

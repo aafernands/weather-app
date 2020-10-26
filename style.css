@@ -313,12 +313,13 @@ a {
 }
 
 .navbar-brand {
-	font-size: 60px;
+	font-size: 45px;
 	color: #ffffffbd;
 	align-items: center;
 	text-align: center;
 	font-family: "Rajdhani", sans-serif;
 }
+
 @media only screen and (max-width: 1850px) {
 	.navbar-brand {
 		font-size: 45px;
@@ -326,6 +327,7 @@ a {
 		align-items: center;
 	}
 }
+
 .navbar-brand:hover {
 	color: #0353b5;
 	text-decoration: underline;
@@ -335,6 +337,7 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .row.display-flex > [class*="col-"] {
 	display: flex;
 	flex-direction: column;
