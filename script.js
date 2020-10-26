@@ -198,6 +198,7 @@ function init() {
 				$errorMessage.show();
 				$errorMessage.text("Couldn't finding city please try again");
 				$welcome.hide();
+				$todayForecastContainer.hide();
 				return;
 			}
 
