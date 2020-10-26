@@ -16,10 +16,10 @@ function init() {
 	var $uvIndex = $("#index-uv");
 	var $digitalClock = $("#DigitalCLOCK");
 	var $greeting = $("#greeting");
+
 	// open weather api key
 	var apiKey = "dc8a1a80fcf0deb6a1fe694830d0507a";
 
-	// =====================================================
 	function handleSearchResult(response) {
 		console.log(response);
 		var temp = response.main.temp;
@@ -27,21 +27,16 @@ function init() {
 		var speed = response.wind.speed;
 		var feelsLike = response.main.feels_like;
 		var cityName = response.name;
+		var unixTime = response.dt * 1000;
 
 		$temp.html(Math.round(temp) + "<span class='temp'>&#8457; </span>");
 		$humd.text("Humidity: " + humidity + "%");
 		$wind.text("Speed Limit: " + speed + " mph");
 		$feels.html("Feels like: " + Math.round(feelsLike) + " &#8457;");
-
 		$uvIndex.html('UV Index: <span class="uv">' + response.value + "</span>");
 
-		var unixTime = response.dt * 1000;
-
 		$CityName.html(
-
-			"<span class='messageCity'>Today's Forecast for </span>"
-
-			+
+			"<span class='messageCity'>Today's Forecast for </span>" +
 				cityName +
 				'<img class= "imgHeader" src="http://openweathermap.org/img/wn/' +
 				response.weather[0].icon +

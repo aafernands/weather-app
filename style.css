@@ -14,38 +14,40 @@ body {
 	background-repeat: no-repeat;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	color: #ffffff93;
 }
 
 #todayForecastContainer {
 	border-radius: 5px;
-	background-color: #ffffff76;
+	background-color: #00000051;
 	border: none;
 	padding: 20px;
 	margin: 20px 0px 20px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
+	color: #ffffffbd;
 }
 
 .errorContainer {
 	border-radius: 5px;
-	background-color: #ffffff76;
+	background-color: #00000051;
 	border: none;
 	padding: 100px;
 	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
-	color: rgb(255, 255, 255);
+	color: #ffffffbd;
 }
 
 .welcomeContainer {
 	border-radius: 5px;
-	background-color: #ffffff76;
+	background-color: #00000051;
 	border: none;
-	padding: 100px;
+	padding: 200px;
 	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
-	color: #343434;
+	color: #ffffffbd;
 }
 
 .forcast {
@@ -53,15 +55,15 @@ body {
 	background-color: rgb(227, 227, 227);
 	flex: 1;
 	padding: 20px;
-	margin: 10px;
+	margin: 5px;
 	float: left;
 	border-radius: 5px;
 	background-color: #ffffff69;
 }
 
-#forcast-list {
-	align-items: center;
-	text-align: center;
+#row {
+	align-items: center ;
+	text-align: center!important;
 }
 
 .col-10 {
@@ -69,8 +71,8 @@ body {
 }
 
 li {
-	color: rgb(59, 59, 59);
-	background-color: ivory;
+	color: rgb(38, 38, 38);
+	background-color: #ffffffa3;
 	font-size: 15px;
 	list-style-type: none;
 	text-align: center;
@@ -94,23 +96,16 @@ li {
 	margin: 0px;
 }
 
-.col-2 {
-	background-color: #eee;
-	margin: 10px 0px 10px 0px;
-	border-radius: 5px;
-	padding: 20px;
-	font-family: "Roboto", sans-serif;
-	font-size: 20px;
-}
-
 #searchBar {
 	margin: 20px 0px 0px 0px;
 	padding: 20px;
-	background-color: #ffffff76;
+	background-color: #00000051;
 	border-radius: 5px;
 	box-shadow: 2.5px 5px 4px #000000;
 	align-items: center;
 	text-align: center;
+	color: #ffffffbd;
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -132,17 +127,6 @@ li {
 	}
 }
 
-footer {
-	width: 100%;
-	color: rgb(255, 255, 255);
-	text-align: center;
-	font-size: 10px;
-}
-
-.todayForecast {
-	box-shadow: 2.5px 5px 4px #000000;
-}
-
 .fiveDayForecast {
 	box-shadow: 2.5px 5px 4px #000000;
 }
@@ -150,9 +134,9 @@ footer {
 .jumbotron {
 	text-align: center;
 	align-items: center;
+	background-color: rgba(0, 0, 0, 0.187);
 	margin: 0px;
 	padding: 15px;
-	background-color: #ffff;
 	border-radius: 0px;
 	font-family: "Rajdhani", sans-serif;
 }
@@ -169,20 +153,14 @@ footer {
 	border: none;
 }
 
-.title {
-	font-size: 40px;
-	color: rgb(84, 84, 84);
-	background-color: rgba(238, 238, 238, 0.488);
-}
-
 .wrapper {
-	margin-right: auto; /* 1. Centers the content. */
-	margin-left: auto; /* 1. Centers the content. */
+	margin-right: auto;
+	margin-left: auto;
 
-	max-width: 960px; /* 2. See the "width vs max-width" section */
+	max-width: 960px;
 
-	padding-right: 10px; /* 3. See the "Additional Padding" section */
-	padding-left: 10px; /* 3. See the "Additional Padding" section */
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 .uv {
@@ -196,16 +174,17 @@ p {
 	font-family: "Roboto", sans-serif;
 	font-size: 20px;
 	font-weight: 100;
+	color: #ffffff93;
 }
 
 .temp,
 #tempDisplay {
 	margin-top: 10px;
-	color: rgb(53, 53, 53);
+	color: #ffffff93;
 	font-size: 40px;
 	font-weight: 100;
-
 	text-align: right;
+	align-items: center;
 }
 
 .DisplayWeathercontainer {
@@ -220,6 +199,8 @@ p {
 #temperature {
 	font-size: 100px;
 	font-weight: 100;
+	font-family: "Roboto", sans-serif;
+
 }
 
 .btn {
@@ -271,8 +252,74 @@ ul {
 	.imgHeader {
 		position: absolute;
 		z-index: 4;
-		top: 60px;
-		left: 30px;
+		top: 40px;
+		left: 45px;
+		width: 150px;
+
 	}
 }
 
+@media only screen and (max-width: 1850px) {
+	.imgHeader {
+		width: 120px;
+		position: absolute;
+		z-index: 4;
+		top: 70px;
+		left: 60px;
+	}
+}
+
+a {
+	font-size: 40px;
+	color: rgb(57, 57, 57);
+	font-family: "Rajdhani", sans-serif;
+}
+
+#greeting {
+	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
+}
+
+#DigitalCLOCK {
+	font-size: 15px;
+}
+
+h6 {
+	font-size: 10px;
+}
+
+.footer,
+a {
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 90px;
+	color: #eee;
+}
+
+.navbar-brand {
+	font-size: 60px;
+	color:#ffffffbd;
+
+	font-family: "Rajdhani", sans-serif;
+}
+@media only screen and (max-width: 1850px) {
+	.navbar-brand {
+		font-size: 45px;
+		text-align: center;
+		align-items: center;
+	}
+}
+.navbar-brand:hover {
+	color: #07008a;
+	text-decoration: underline;
+}
+
+.row.display-flex {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  .row.display-flex > [class*='col-'] {
+	display: flex;
+	flex-direction: column;
+  }

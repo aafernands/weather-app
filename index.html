@@ -15,78 +15,42 @@
 
 <body>
 
-
-    <div class="jumbotron">
-        <div class="container">
-            <a style="text-decoration: none" href="index.html" class="title">Weather Dashboard</a>
-        </div>
-    </div>
     <div class="wrapper">
-
         <div class="row">
-
             <div id="searchBar" class="col-md-3">
-
-
-
-
-
                 <div class="dashboardHeader">
-
-                    <div id="greeting">greeting</div>
-
-
-                    <p id="DigitalCLOCK" class="clock">clock</p>
-
-
+                    <nav class="navbar">
+                        <a class="navbar-brand" href="index.html" style="text-decoration: none"><span>Weather <br>
+                                Dashboard</span> </a>
+                    </nav>
+                    <br><br>
+                    <div id="greeting">Welcome</div>
+                    <p id="DigitalCLOCK" class="clock"></p>
                     <hr>
                 </div>
-
-
-
-
-
-                <p class="search-header my-1">Search for a city</p>
-
-
+                <br>
                 <div class="input-group mb-3">
-
-
                     <input id="city-input" type="text" class="form-control" placeholder="Search for Location / City"
                         aria-label="Enter city name">
-
                     <div class="input-group-append">
-
                         <button class="btn btn-primary" type="button" id="search-button">
                             <i class="fas fa-search"></i>
                         </button>
-
                     </div>
-
-
+                    <br>
                 </div>
-                <ul id="history">
-                </ul>
-
+                <ul id="history"></ul>
                 <div id="historybox" style="display:none">
-
-
                     <br>
                     <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 </div>
 
+                <footer class="footer">
+                    <h6>© 2020 Designed by <span class="footerLink"> <a
+                                href="https://twitter.com/alexafernands">AlexFernandes</a></span></h6>
+                </footer>
             </div>
-
-            <!-- <p class="search-header my-1">Favorites</p> -->
-
-
-
-
-
             <div class="col-md-9">
-
-
-
                 <div class="errorContainer" id="errorMessage" style="display:none">
                 </div>
                 <div class="welcomeContainer">
@@ -95,18 +59,8 @@
                     <hr>
                     <h4>Search for a city to get weather information.</h4>
                 </div>
-
-
-
-
                 <div id="todayForecastContainer" class="col-12 " style="display:none">
                     <span id="city-name" class="resultsLine "></span>
-
-
-
-
-
-
                     <div class="DisplayWeathercontainer">
                         <div class="row">
                             <div id="tempDisplay" class="col-sm">
@@ -130,14 +84,9 @@
                                     <p id="index-uv"></p>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
-
                     <hr>
-
                     <div class="col-12">
                         <h3>5 Day Weather</h3>
 
@@ -146,32 +95,16 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
             </div>
-
-
-
         </div>
 
     </div>
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
     <script src="script.js"></script>
-
 </body>
 
 </html>
