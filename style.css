@@ -21,7 +21,7 @@ body {
 	border-radius: 5px;
 	background-color: #00000051;
 	border: none;
-	padding: 20px;
+	padding: 140px 0px 160px 20px;
 	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
@@ -32,7 +32,7 @@ body {
 	border-radius: 5px;
 	background-color: #00000051;
 	border: none;
-	padding: 100px;
+	padding: 300px 0px 300px 60px;
 	margin: 20px 0px 0px 0px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2.5px 5px 4px #000000;
@@ -53,8 +53,8 @@ body {
 	align-items: center;
 	background-color: rgb(227, 227, 227);
 	flex: 1;
-	padding: 20px;
-	margin: 5px;
+	padding: 10px;
+	margin: 4px;
 	float: left;
 	border-radius: 5px;
 	background-color: #ffffff69;
@@ -63,10 +63,9 @@ body {
 @media only screen and (max-width: 500px) {
 	.forcast {
 		padding: 50px;
-	margin-left: 60px;
+		margin-left: 40px;
 	}
 }
-
 
 #row {
 	align-items: center;
@@ -184,8 +183,8 @@ p {
 	color: #ffffff93;
 }
 
-.temp,
 #tempDisplay {
+	padding-left: 70px;
 	margin-top: 10px;
 	color: #ffffff93;
 	font-size: 40px;
@@ -194,8 +193,28 @@ p {
 	align-items: left;
 }
 
-.DisplayWeathercontainer {
-	align-items: center;
+@media only screen and (max-width: 500px) {
+	#tempDisplay {
+		padding-left: 50px;
+	}
+}
+
+.temp {
+	margin-top: 10px;
+	color: #ffffff93;
+	font-size: 40px;
+	font-weight: 100;
+	text-align: left;
+	align-items: left;
+}
+
+@media only screen and (max-width: 500px) {
+	.temp {
+		position: absolute;
+		z-index: 4;
+		top: 5px;
+		left: 160px;
+	}
 }
 
 .col-sm {
@@ -247,22 +266,20 @@ ul {
 	font-size: 20px;
 }
 
-
 .imgHeader {
 	position: absolute;
 	z-index: 4;
-	top: 40px;
-	left: 190px;
-	width: 150px;
-
+	top: 170px;
+	left: 250px;
+	width: 130px;
 }
 
 @media only screen and (max-width: 500px) {
 	.imgHeader {
 		position: absolute;
 		z-index: 4;
-		top: 50px;
-		left: 180px;
+		top: 150px;
+		left: 210px;
 		width: 150px;
 	}
 }
@@ -326,4 +343,12 @@ a {
 hr {
 	margin: 10px 50px 10px 50px;
 	background-color: rgba(255, 255, 255, 0.249);
+}
+
+#errorMessage {
+	font-size: 30px;
+}
+
+.col-sm {
+	margin-left: 20px;
 }

@@ -162,7 +162,7 @@ function init() {
 			$historyList.empty();
 			cityHistory = [];
 			$historybox.hide();
-			$errorMessage.show();
+			$errorMessage.hide();
 		});
 
 		$historyList.on("click", "li", function (event) {
@@ -193,7 +193,7 @@ function init() {
 		if (session === "AM") {
 			return "Good morning";
 		} else {
-			if ((hourNow) => 12 || hourNow < 7) {
+			if (hourNow > 12 || hourNow < 7) {
 				return "Good afternoon";
 			}
 			return "Good Evening";
