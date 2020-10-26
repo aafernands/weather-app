@@ -2,7 +2,7 @@
 
 ## Assignment
 
-Build a weather dashoard following the above crteria
+Build a weather dashoard following the above criteria
 
 - Provide the user the ability to search for a city.
 - Show the current and future conditions for that city.
