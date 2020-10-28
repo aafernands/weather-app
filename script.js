@@ -125,7 +125,7 @@ function init() {
 			if (forcast.dt_txt.indexOf("00:00:00") !== -1) {
 				forcastBox +=
 					"<div class='forcast'>" +
-					forcast.dt_txt.split(' ')[0].replaceAll('-', '/') +
+					new Date(forcast.dt * 1000).toLocaleDateString() +
 					" <br/><img src='http://openweathermap.org/img/wn/" +
 					forcast.weather[0].icon +
 					"@2x.png'/>" +
