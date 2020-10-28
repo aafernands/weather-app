@@ -125,7 +125,7 @@ function init() {
 			if (forcast.dt_txt.indexOf("00:00:00") !== -1) {
 				forcastBox +=
 					"<div class='forcast'>" +
-					new Date(forcast.dt_txt).toLocaleDateString() +
+					forcast.dt_txt.split(' ')[0].replaceAll('-', '/') +
 					" <br/><img src='http://openweathermap.org/img/wn/" +
 					forcast.weather[0].icon +
 					"@2x.png'/>" +
@@ -242,6 +242,21 @@ function init() {
 		$greeting.text(greeting);
 	}
 
+
+
+	$(document).ready(function() {
+		$.ajax({
+			url: "https://api.nasa.gov/planetary/apod?api_key=gYo6aP2v2kURjJFrRdzO4eOvx79sGG3ngPwy2USO"
+		}).then(function(data) {
+			console.log(data.hdurl);
+			$('#img').append('<img src="' + data.hdurl + '">');
+			console.log(data.hdurl);
+		});
+	});
+
+
+
+	
 	// load greeting and moment clock
 	setInterval(updateTime, 1000);
 
@@ -250,5 +265,11 @@ function init() {
 
 	// attacheClearHistoryevent();
 	attachEvent();
+
+
+
+
+
+
 }
 $(init);

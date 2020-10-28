@@ -162,9 +162,7 @@ li {
 .wrapper {
 	margin-right: auto;
 	margin-left: auto;
-
 	max-width: 960px;
-
 	padding-right: 10px;
 	padding-left: 10px;
 }
@@ -174,23 +172,23 @@ li {
 	color: rgba(65, 65, 65, 0.933);
 }
 
-.uvLow{
+.uvLow {
 	background-color: green;
 }
 
-.uvModerate{
+.uvModerate {
 	background-color: yellow;
 }
 
-.uvHigh{
+.uvHigh {
 	background-color: orange;
 }
 
-.uvVeryHigh{
+.uvVeryHigh {
 	background-color: red;
 }
 
-.uvExtremelyHigh{
+.uvExtremelyHigh {
 	background-color: purple;
 }
 .fahrenheit,
@@ -372,4 +370,12 @@ hr {
 
 .col-sm {
 	margin-left: 20px;
+}
+
+#img {
+	position: relative;
+	z-index: 4;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
 }
