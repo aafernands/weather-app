@@ -1,8 +1,8 @@
-# HOMEWORK WEEK 6 - WEATHER DASHBOARD API
+# HOMEWORK WEEK 6 - WEATHER APP
 
 ## Assignment
 
-Build a weather dashoard following the above criteria
+Build a weather dashboard following the above criteria
 
 - Provide the user the ability to search for a city.
 - Show the current and future conditions for that city.
@@ -37,7 +37,7 @@ The final project has been deployed to GitHub Pages. All links/buttons on this w
 - Bootstrap (https://getbootstrap.com/);
 - Google Fonts (https://fonts.google.com/);
 - W3 Schools (https://www.w3schools.com/);
-- The final version was pushed to homework repository at GitiHub at https://github.com/aafernands/work-day-scheduler;
+- The final version was pushed to homework repository at GitiHub at https://github.com/aafernands/weatherApp;
 - Deployed version : https://aafernands.github.io/weatherApp/
 
 ## Authors
