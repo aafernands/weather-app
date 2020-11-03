@@ -38,7 +38,7 @@ The final project has been deployed to GitHub Pages. All links/buttons on this w
 - Google Fonts (https://fonts.google.com/);
 - W3 Schools (https://www.w3schools.com/);
 - The final version was pushed to homework repository at GitiHub at https://github.com/aafernands/work-day-scheduler;
-- Deployed version : https://aafernands.github.io/weather-dashboard/
+- Deployed version : https://aafernands.github.io/weatherApp/
 
 ## Authors
 
