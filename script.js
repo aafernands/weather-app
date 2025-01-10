@@ -1,5 +1,8 @@
 function init() {
 	var cityHistory = []; // store city search
+	
+	var currentYear = new Date().getFullYear();
+	document.getElementById("updateYear").textContent = currentYear;
 
 	// jquery dom element link to the html
 	var $temp = $("#temperature");
